@@ -4,17 +4,15 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 
-
-class Square extends React.Component {
-  render(){
-    return(
-      <button className="square" onClick={() => this.props.onClick({value: 'X'})}>
-        {this.props.value}
-      </button>
-    )
-  }
+// Controlled Component
+function Square(props) {
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 }
-
+// Parent Class
 class Board extends React.Component {
   constructor(){
     super();
@@ -22,8 +20,11 @@ class Board extends React.Component {
       squares: Array(9).fill(null)
     }
   }
-
-
+  handleClick(i){
+    const squares = this.state.squares.slice();
+    squares[i] = 'X'
+    this.setState({squares: squares});
+  }
   renderSquare(i){
     return(
       <Square
