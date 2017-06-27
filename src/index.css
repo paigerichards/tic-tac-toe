@@ -1,5 +1,30 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  text-align: center;
+  background-color: black;
+  font-family: monospace;
+  margin-top: 120px;
+
+}
+div {
+  color: aqua;
+}
+
+button.square{
+  color: red;
+}
+
+ div.game-info {
+    text-align: center;
+    margin-top: 10px;
+}
+ol {
+
+}
+a {
+  text-decoration: none;
+  color: aqua;
+}
+li {
+  max-width: 100px;
+  margin: auto;
 }
